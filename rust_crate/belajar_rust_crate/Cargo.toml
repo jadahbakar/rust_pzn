@@ -1,0 +1,8 @@
+[package]
+name = "belajar_rust_crate"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.38"
+say-hello-styawan = { version = "=0.3.0", features = ["all"] }
