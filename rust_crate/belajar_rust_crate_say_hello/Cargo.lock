@@ -24,19 +24,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c4b4d0bd25bd0b74681c0ad21497610ce1b7c91b1022cd21c80c6fbdd9476b0"
 
 [[package]]
-name = "belajar_rust_crate"
-version = "0.1.0"
-dependencies = [
- "belajar_rust_crate_say_hello",
- "chrono",
- "say-hello-styawan",
-]
-
-[[package]]
 name = "belajar_rust_crate_say_hello"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a1c45d1b51084c4ebff37fd45d78111d39ed73b2757f91b23738c06e5436bb57"
+version = "0.1.0"
 dependencies = [
  "chrono",
 ]
@@ -154,15 +143,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0fa76aaf39101c457836aec0ce2316dbdc3ab723cdda1c6bd4e6ad4208acaca7"
 dependencies = [
  "proc-macro2",
-]
-
-[[package]]
-name = "say-hello-styawan"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06698652b11170535cf14692b6aac20fb349eb4d21ea9fc790859a5a2c0728a2"
-dependencies = [
- "chrono",
 ]
 
 [[package]]
