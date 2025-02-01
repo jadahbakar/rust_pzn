@@ -174,7 +174,7 @@ const MINIMUM_VALUE: f64 = 90.7;
 fn test_constant() {
     // IMMUTABLE, build declaration, EXPLICIT data type, UPPER CASE
     const MAXIMUM_VALUE: i32 = 100;
-    println!("{}, {}", MAXIMUM_VALUE, MINIMUM_VALUE);
+    println!("max :{} \nmin :{}", MAXIMUM_VALUE, MINIMUM_VALUE);
 }
 
 // VARIABLE SCOPE ************************************************************************************************************************
@@ -294,7 +294,7 @@ fn test_ownership_rules() {
 // 1. Data Copy tidak terjadi untuk tipe data yang di simpan di HEAP
 // 2. Dalam satu waktu, hanya boleh 1 OWNER
 // 3. Maka, ketika kita buat variable Baru (Owner Baru) dari variable lama (Owner Lama),
-//      maka yg terjadi bukanlah Copy,
+//      maka yg terjadi bukanlah Copy, (move semantics -> untuk tipe data non-primitif, yang salah satunya adalah custom type String)
 //      melainkan transfer ownership, dari Owner Lama ke Owner Baru
 // 4. Setelah proses transfer Ownership selesai, otomatis Owner Lama tidak Valid digunakan
 
@@ -608,7 +608,7 @@ fn test_nothing() {
 
 // METHOD ************************************************************************************************************************
 // Sama seperti FUNCTION
-// Namun METHOD tidak berdiri sendiri, melainkan menempel di STRUCt, ENUM, atau TRAIT
+// Namun METHOD tidak berdiri sendiri, melainkan menempel di STRUCT, ENUM, atau TRAIT
 // Pada METHOD, Parameter pertama selalu menggunakan "self"
 // "Self" adalah representasi dari INSTANCE dari STRUCT, dimana METHOD tersebut di panggil
 // HOW TO BUILD
@@ -717,6 +717,7 @@ fn test_pm_enum() {
 
 // DESTRUCTURING ENUM DATA PATTERNS
 impl Payment {
+    #[allow(dead_code)]
     fn pay(&self, amount: u32) {
         match self {
             Payment::CreditCard(number) => {

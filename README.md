@@ -13,6 +13,10 @@ Thank's to Mas Eko Kurniawan Khanedy
  
  - [Udemy](https://www.udemy.com/course/belajar-rust/learn/lecture)
  - [Slides](https://docs.google.com/presentation/d/1mqMwhNH6If-hmyuradHBjZmoiTzA098NP2Rz_sBOVOw/edit#slide=id.p)
+
+
+ ### Rust Concurency
+ - [Slides](https://docs.google.com/presentation/d/1IPYtI2ysLN5sk3peNme23QAKNxksgVJA9DnmZCb5KVc/edit?usp=sharing)
  
 
  ## Roadmap
@@ -30,6 +34,6 @@ Thank's to Mas Eko Kurniawan Khanedy
  -  [belajar Attribute](./dasar_rust/belajar_attribute/)
  -  [belajar Pointer](./dasar_rust/smart_pointer/)
  -  [belajar Macro](./dasar_rust/belajar_macro/)
-### Rust Create
+
  
  

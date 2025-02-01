@@ -16,5 +16,6 @@ pub fn say_greetings() -> String {
 #[cfg(feature = "jam")]
 pub fn get_time() -> String {
     let jam = Local::now();
-    format!("{:?}", jam)
+    let formatted_time = now.format("%H:%M");
+    format!("{:?}", formatted_time)
 }
