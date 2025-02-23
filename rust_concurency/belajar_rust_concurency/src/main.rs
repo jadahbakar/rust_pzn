@@ -18,6 +18,8 @@ mod test {
         println!("Application finish");
         thread::sleep(Duration::from_secs(7))
     }
+    // untuk menampilkan output secara realtime di terminal gunakan -- --nocapture
+    // cargo test tests::test_create_thread  -- --nocapture
 
     #[test]
     fn test_join_handler() {

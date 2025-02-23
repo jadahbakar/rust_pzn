@@ -645,7 +645,7 @@ fn test_method() {
 impl GeoPoint {
     // berdiri sendiri
     #[allow(dead_code)]
-    fn new(long: f64, lat: f64) -> GeoPoint {
+    fn new(long: f64, lat: f64) -> Self {
         GeoPoint(long, lat)
     }
 }
@@ -872,7 +872,6 @@ fn test_ignoring_range_matching() {
 }
 
 // TYPE ALIAS ************************************************************************************************************************
-
 type Age = u8;
 type KTP = String;
 
