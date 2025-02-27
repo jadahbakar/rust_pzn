@@ -4,4 +4,4 @@ remove-target:
 
 find-target:
 	@echo "find target..."
-	find . -name "target" -print -type f
+	@find . -name "target" -print -type f
