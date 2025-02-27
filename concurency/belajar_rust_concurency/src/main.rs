@@ -4,8 +4,8 @@ fn main() {
 
 #[cfg(test)]
 mod test {
-    use std::thread;
-    use std::time::Duration;
+    use std::{thread, time::Duration};
+    use tokio::runtime::Runtime;
 
     #[test]
     fn test_create_thread() {
@@ -18,7 +18,7 @@ mod test {
         println!("Application finish");
         thread::sleep(Duration::from_secs(7))
     }
-    // untuk menampilkan output secara realtime di terminal gunakan -- --nocapture
+    // Untuk menampilkan output secara realtime di terminal gunakan -- --nocapture
     // cargo test tests::test_create_thread  -- --nocapture
 
     #[test]
@@ -174,7 +174,6 @@ mod test {
         },
     };
 
-    use tokio::runtime::Runtime;
     #[test]
     fn test_channel() {
         let (sender, receiver) = std::sync::mpsc::channel::<String>();
