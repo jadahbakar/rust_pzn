@@ -11,9 +11,13 @@ fn main() {
 #[test]
 fn test_closure() {
     let sum = |value1: i32, value2: i32| -> i32 { value1 + value2 };
+    let multiply = |val1: i32, val2: i32| -> i32 { val1 * val2 };
 
     let res = sum(1, 2);
-    println!("{}", res)
+    println!("sum:  {}", res);
+
+    let res = multiply(3, 2);
+    println!("mult: {}", res);
 }
 
 // CLOSURE as PARAMETER
