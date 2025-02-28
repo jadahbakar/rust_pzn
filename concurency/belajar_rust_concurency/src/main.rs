@@ -20,7 +20,6 @@ mod test {
     }
     // Untuk menampilkan output secara realtime di terminal gunakan -- --nocapture
     // cargo test tests::test_create_thread  -- --nocapture
-
     #[test]
     fn test_join_handler() {
         let handle = thread::spawn(|| {
@@ -278,7 +277,7 @@ mod test {
     #[test]
     fn race_condition() {
         let mut handlers = vec![];
-        for _ in 0..=10 {
+        for _ in 0..10 {
             let handler = thread::spawn(|| unsafe {
                 for _j in 0..1000000 {
                     COUNTER += 1
@@ -295,7 +294,7 @@ mod test {
     }
 
     // Solved using Atomic ------------------------------
-    // Atomic merupakan tipe data yang digunakan untuk sharing untuk beberapa thread
+    // Atomic merupakan tipe data yang digunakan untuk sharing - beberapa thread
     // Atomic sendiri merupakan tipe data yang membungkus tipe data aslinya
     // Kita bisa pilih jenis tipe data Atomic, sesuai dengan tipe data aslinya yang akan kita gunakan
 
@@ -328,6 +327,7 @@ mod test {
     fn test_atomic_reference() {
         let counter: Arc<AtomicI32> = Arc::new(AtomicI32::new(0));
         let mut handlers = vec![];
+
         for _ in 0..10 {
             let counter_clone = Arc::clone(&counter);
             let handler = thread::spawn(move || {
@@ -337,12 +337,30 @@ mod test {
             });
             handlers.push(handler);
         }
-
         for hdlr in handlers {
             hdlr.join().unwrap()
         }
-
         println!("counter: {}", counter.load(Ordering::Relaxed));
+    }
+
+    #[test]
+    fn test_arc() {
+        let data = Arc::new(AtomicI32::new(0));
+        let mut handlers = vec![];
+
+        for _ in 0..2 {
+            let data = Arc::clone(&data); // clone daa
+            let hdlr = thread::spawn(move || {
+                // let data = data;
+
+                println!("{:?}", data);
+            });
+            handlers.push(hdlr);
+        }
+
+        for h in handlers {
+            h.join().unwrap();
+        }
     }
 
     // Mutex (Mutual Exclusion) ------------------------------------------------------------
