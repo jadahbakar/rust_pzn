@@ -175,7 +175,7 @@ mod test {
         //     .fetch_all(&pool)
         //     .await?;
 
-        let result = sqlx::query_as("SELECT * FROM category")
+        let result = sqlx::query_as<_, Category>("SELECT * FROM category")
             .fetch_all(&pool)
             .await?;
 
