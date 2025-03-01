@@ -171,7 +171,11 @@ mod test {
     #[tokio::test]
     async fn test_auto_result_mapping() -> Result<(), Error> {
         let pool = get_pool().await?;
-        let result: Vec<Category> = sqlx::query_as("SELECT * FROM category")
+        // let result: Vec<Category> = sqlx::query_as("SELECT * FROM category")
+        //     .fetch_all(&pool)
+        //     .await?;
+
+        let result = sqlx::query_as("SELECT * FROM category")
             .fetch_all(&pool)
             .await?;
 
