@@ -21,7 +21,7 @@ mod test {
 
     // POOL ---------------------------------------------------------------------
     async fn get_pool() -> Result<Pool<Postgres>, Error> {
-        let url = "postgres://dapen:5l4ckm4N*@160.191.171.82:5432/dapen";
+        let url = "";
         PgPoolOptions::new()
             .max_connections(10)
             .min_connections(5)
