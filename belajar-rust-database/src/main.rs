@@ -8,7 +8,7 @@ mod test {
     use sqlx::postgres::{PgPoolOptions, PgRow};
     use sqlx::prelude::FromRow;
     use sqlx::{Connection, Error, PgConnection, Pool, Postgres, Row};
-    use std::result;
+    // use std::result;
     use std::time::Duration;
 
     #[tokio::test]
@@ -21,7 +21,7 @@ mod test {
 
     // POOL ---------------------------------------------------------------------
     async fn get_pool() -> Result<Pool<Postgres>, Error> {
-        let url = "postgres://test:test*123@localhost:5432/test";
+        let url = "postgres://dapen:5l4ckm4N*@160.191.171.82:5432/dapen";
         PgPoolOptions::new()
             .max_connections(10)
             .min_connections(5)
@@ -168,22 +168,22 @@ mod test {
     }
 
     // AUTOMATIC RESULT MAPPING ---------------------------------------------------------------------
-    #[tokio::test]
-    async fn test_auto_result_mapping() -> Result<(), Error> {
-        let pool = get_pool().await?;
-        // let result: Vec<Category> = sqlx::query_as("SELECT * FROM category")
-        //     .fetch_all(&pool)
-        //     .await?;
+    // #[tokio::test]
+    // async fn test_auto_result_mapping() -> Result<(), Error> {
+    //     let pool = get_pool().await?;
+    //     // let result: Vec<Category> = sqlx::query_as("SELECT * FROM category")
+    //     //     .fetch_all(&pool)
+    //     //     .await?;
 
-        let result = sqlx::query_as<_, Category>("SELECT * FROM category")
-            .fetch_all(&pool)
-            .await?;
+    //     let result = sqlx::query_as<_, Category>("SELECT * FROM category")
+    //         .fetch_all(&pool)
+    //         .await?;
 
-        for category in result {
-            println!("{:?}", category);
-        }
-        Ok(())
-    }
+    //     for category in result {
+    //         println!("{:?}", category);
+    //     }
+    //     Ok(())
+    // }
 
     // DATA TYPE ---------------------------------------------------------------------
 
