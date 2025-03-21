@@ -18,6 +18,7 @@ mod test {
         println!("Application finish");
         thread::sleep(Duration::from_secs(7))
     }
+
     // Untuk menampilkan output secara realtime di terminal gunakan -- --nocapture
     // cargo test tests::test_create_thread  -- --nocapture
     #[test]
@@ -51,8 +52,8 @@ mod test {
 
     #[test]
     fn test_sequential() {
-        let result_1 = calculate();
-        let result_2 = calculate();
+        let _result_1 = calculate();
+        let _result_2 = calculate();
         println!("App finished")
     }
 
